@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    /* Reset and Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+        /* background-color: #000000; */
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        /* Prevents scrollbars during cinematic animations */
+    }
+
+    /* Layout */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+        padding: 40px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Cinematic Text Reveal Animations */
+    .content-left {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .content-left h1 {
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: -0.02em;
+        opacity: 0;
+        animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    .content-left p {
+        font-size: 1.2rem;
+        color: #a0a0a0;
+        margin-bottom: 40px;
+        line-height: 1.5;
+        opacity: 0;
+        animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        opacity: 0;
+        animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    }
+
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Buttons */
+    .btn {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+        transform: translateX(5px);
+        /* Subtle interaction animation */
+    }
+
+    .btn-primary {
+        color: #ffffff;
+    }
+
+    .btn-secondary {
+        color: #a0a0a0;
+    }
+
+    /* Right Graphic Styles */
+    .graphic-right {
+        flex: 1;
+        position: relative;
+        height: 500px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Cinematic Triangles: Shifting gradients and glows */
+    .triangle {
+        /* Made the gradient larger and more complex for a morphing effect */
+        background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #c2e9fb, #e0c3fc);
+        background-size: 300% 300%;
+        clip-path: polygon(0 0, 0 100%, 100% 100%);
+        position: absolute;
+        opacity: 0;
+
+        /* Using CSS drop-shadow filter on the parent wrapper isn't possible with clip-path directly, 
+       but the fluid gradient and floating gives it the cinematic feel */
+    }
+
+    /* 
+  Chaining animations: 
+  1. slideIn (the initial entrance)
+  2. gradientShift (continuous color morphing)
+  3. float (continuous breathing up and down)
+*/
+
+    .triangle-large {
+        width: 400px;
+        height: 400px;
+        right: 0;
+        bottom: 50px;
+        animation:
+            slideIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards,
+            gradientShift 10s ease infinite,
+            floatLarge 6s ease-in-out 1.9s infinite;
+        /* Starts after slideIn finishes */
+    }
+
+    .triangle-medium {
+        width: 200px;
+        height: 200px;
+        right: 350px;
+        bottom: 50px;
+        animation:
+            slideIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards,
+            gradientShift 8s ease infinite,
+            floatMedium 5s ease-in-out 1.7s infinite;
+    }
+
+    .triangle-small {
+        width: 100px;
+        height: 100px;
+        right: 500px;
+        bottom: 50px;
+        animation:
+            slideIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards,
+            gradientShift 6s ease infinite,
+            floatSmall 4s ease-in-out 1.5s infinite;
+    }
+
+    /* Right Graphic Styles */
+    .graphic-right {
+        flex: 1;
+        position: relative;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Cinematic 3D Glowing Blob */
+    .blob {
+        width: 450px;
+        height: 450px;
+
+        /* Radial gradient creates the 3D lighting: white-hot center fading to mint and emerald green */
+        background: radial-gradient(circle at 40% 40%, #ffffff 0%, #6ee7b7 40%, #10b981 80%, #047857 100%);
+
+        /* Multiple shadows: outer ambient glow + inner shadows for depth */
+        box-shadow:
+            0 0 80px 20px rgba(16, 185, 129, 0.4),
+            /* Green outer glow */
+            inset -20px -20px 50px rgba(0, 0, 0, 0.2),
+            /* Bottom-right shadow for 3D sphere effect */
+            inset 20px 20px 60px rgba(255, 255, 255, 0.6);
+        /* Top-left highlight */
+
+        opacity: 0;
+
+        /* Chained animations: Entrance + continuous shape morphing */
+        animation:
+            slideIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards,
+            blobMorph 8s ease-in-out infinite alternate;
+    }
+
+    /* Smooth organic shape shifting */
+    @keyframes blobMorph {
+        0% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            transform: scale(1) translateY(0);
+        }
+
+        50% {
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            transform: scale(1.05) translateY(-15px);
+        }
+
+        100% {
+            border-radius: 40% 60% 50% 50% / 40% 50% 60% 50%;
+            transform: scale(0.95) translateY(10px);
+        }
+    }
+
+    /* Updated slideIn to accommodate the single blob */
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateX(80px) scale(0.8);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    /* Animation for the geometric shapes appearing */
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateX(80px) scale(0.8);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    /* Continuous liquid gradient morphing */
+    @keyframes gradientShift {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Ambient Floating Animations (Slightly different timings/distances for parallax feel) */
+    @keyframes floatLarge {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    @keyframes floatMedium {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-25px);
+        }
+    }
+
+    @keyframes floatSmall {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Responsive Layout for Mobile Devices (Android, iPhone, etc.) */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            /* Centering the text looks much better on mobile */
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Move the glowing orb to the top */
+        .graphic-right {
+            order: -1;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+        /* Scale down the blob so it fits nicely on a small screen */
+        .blob {
+            width: 280px;
+            height: 280px;
+        }
+
+        /* Move the text to the bottom */
+        .content-left {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Centers the text and buttons */
+        }
+
+        /* Shrink the headline so it doesn't break off the screen */
+        .content-left h1 {
+            font-size: 2.5rem;
+        }
+
+        .content-left p {
+            font-size: 1rem;
+        }
+    }
+
+    /* Reset and Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+        background-color: #ffffff;
+        /* Switched to white background */
+        color: #111827;
+        /* Switched to near-black text for high contrast */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Layout */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+        padding: 40px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Cinematic Text Reveal Animations */
+    .content-left {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .content-left h1 {
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: -0.02em;
+        opacity: 0;
+        animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    .content-left p {
+        font-size: 1.2rem;
+        color: #4b5563;
+        /* Dark gray for secondary text on white */
+        margin-bottom: 40px;
+        line-height: 1.5;
+        opacity: 0;
+        animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        opacity: 0;
+        animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    }
+
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Buttons */
+    .btn {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+    }
+
+    .btn-primary {
+        background-color: #065f46;
+        /* Matching your base color */
+        color: #ffffff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 14px rgba(6, 95, 70, 0.3);
+        /* Soft button shadow */
+    }
+
+    .btn-secondary {
+        color: #065f46;
+        /* Matching your base color */
+        padding: 12px 24px;
+    }
+
+    /* Right Graphic Styles */
+    .graphic-right {
+        flex: 1;
+        position: relative;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Cinematic 3D Glowing Blob for White Background */
+    .blob {
+        width: 450px;
+        height: 450px;
+
+        /* Using #065f46 as the dominant mid-tone, fading to a darker edge for depth */
+        background: radial-gradient(circle at 35% 35%, #ffffff 0%, #34d399 25%, #065f46 65%, #022c22 100%);
+
+        /* Adjusted shadows for a light background */
+        box-shadow:
+            0 30px 60px rgba(6, 95, 70, 0.25),
+            /* Soft, diffused drop shadow onto the white background */
+            inset -20px -20px 50px rgba(2, 44, 34, 0.5),
+            /* Dark inner shadow for 3D depth */
+            inset 20px 20px 60px rgba(255, 255, 255, 0.8);
+        /* Strong bright highlight on top left */
+
+        opacity: 0;
+
+        animation:
+            slideIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards,
+            blobMorph 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes blobMorph {
+        0% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            transform: scale(1) translateY(0);
+        }
+
+        50% {
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            transform: scale(1.05) translateY(-15px);
+        }
+
+        100% {
+            border-radius: 40% 60% 50% 50% / 40% 50% 60% 50%;
+            transform: scale(0.95) translateY(10px);
+        }
+    }
+
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateX(80px) scale(0.8);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    /* Responsive Layout for Mobile Devices */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .graphic-right {
+            order: -1;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+        .blob {
+            width: 280px;
+            height: 280px;
+        }
+
+        .content-left {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content-left h1 {
+            font-size: 2.5rem;
+        }
+
+        .content-left p {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakthrough AI Hero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="content-left">
+            <h1>Breakthrough AI from<br>Data to Deployment</h1>
+            <p>Delivers proven data, evaluations, and outcomes<br>for governments, and the Fortune 500.</p>
+            <div class="buttons">
+                <a href="#" class="btn btn-primary">Demo &rarr;</a>
+                <a href="#" class="btn btn-secondary">Build AI &rarr;</a>
+            </div>
+        </div>
+        <div class="graphic-right">
+            <div class="blob"></div>
+        </div>
+    </section>
+</body>
+
+</html>

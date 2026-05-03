@@ -13,10 +13,53 @@ export default function AboutPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-canvas pt-24 pb-32">
+        <div className="min-h-screen bg-canvas pt-24 pb-32" role="main">
+
+            {/* Structured Data - JSON-LD for About Page */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "AboutPage",
+                        "name": "About ScaleJade",
+                        "description": "ScaleJade is a technology firm helping enterprises build the digital foundation for their future — across software, AI, blockchain, and cloud.",
+                        "mainEntity": {
+                            "@type": "ItemList",
+                            "name": "Our Values",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Reliability First",
+                                    "description": "We build systems designed to hold up under real-world demands — whether you're serving hundreds or millions of users."
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Security by Design",
+                                    "description": "Security isn't an afterthought — it's built into every layer of what we deliver, from architecture to deployment."
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Compliance-Ready",
+                                    "description": "We understand the regulatory environments our clients operate in, and we design our systems to meet them."
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 4,
+                                    "name": "Built to Scale",
+                                    "description": "Every solution we build is designed with growth in mind, so your technology evolves as your organization does."
+                                }
+                            ]
+                        }
+                    })
+                }}
+            />
 
             {/* 1. Introduction (Hero) */}
-            <section className="px-6 max-w-4xl mx-auto text-center mb-32">
+            <section className="px-6 max-w-4xl mx-auto text-center mb-32" aria-labelledby="about-intro-heading">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -26,6 +69,7 @@ export default function AboutPage() {
                 </motion.div>
 
                 <motion.h1
+                    id="about-intro-heading"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
@@ -45,14 +89,14 @@ export default function AboutPage() {
             </section>
 
             {/* 2. Who We Are */}
-            <section className="px-6 max-w-5xl mx-auto mb-32">
+            <section className="px-6 max-w-5xl mx-auto mb-32" aria-labelledby="who-we-are-heading">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="border-l-4 border-scalejade-600 pl-8 md:pl-12 py-4"
                 >
-                    <h2 className="text-sm font-bold text-scalejade-600 tracking-widest uppercase mb-4">
+                    <h2 id="who-we-are-heading" className="text-sm font-bold text-scalejade-600 tracking-widest uppercase mb-4">
                         {t('who_we_are_title')}
                     </h2>
                     <p className="text-2xl md:text-4xl text-slate-900 font-medium tracking-tight leading-snug">
@@ -62,7 +106,7 @@ export default function AboutPage() {
             </section>
 
             {/* 3. Our Mission (High-Contrast Block) */}
-            <section className="px-6 max-w-7xl mx-auto mb-32">
+            <section className="px-6 max-w-7xl mx-auto mb-32" aria-labelledby="mission-heading">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -73,7 +117,7 @@ export default function AboutPage() {
                     <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none" />
 
                     <div className="relative z-10 max-w-4xl mx-auto">
-                        <h2 className="text-scalejade-400 font-semibold tracking-widest uppercase text-sm mb-6">
+                        <h2 id="mission-heading" className="text-scalejade-400 font-semibold tracking-widest uppercase text-sm mb-6">
                             {t('mission_title')}
                         </h2>
                         <p className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
@@ -84,9 +128,9 @@ export default function AboutPage() {
             </section>
 
             {/* 4. Our Values (2x2 Grid) */}
-            <section className="px-6 max-w-6xl mx-auto">
+            <section className="px-6 max-w-6xl mx-auto" aria-labelledby="values-heading">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    <h2 id="values-heading" className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                         {t('values_title')}
                     </h2>
                 </div>
@@ -101,7 +145,7 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="bg-surface border border-slate-200 p-10 rounded-2xl hover:border-scalejade-600/50 hover:shadow-lg hover:shadow-scalejade-900/5 transition-all group"
+                                className="bg-surface border border-slate-200 p-10 rounded-2xl hover:border-scalejade-600/50 hover:shadow-lg hover:shadow-scalejade-900/5 transition-all"
                             >
                                 <div className="mb-6 w-14 h-14 bg-white border border-slate-200 rounded-xl flex items-center justify-center group-hover:bg-scalejade-50 transition-colors">
                                     <Icon className="w-7 h-7 text-scalejade-800" />

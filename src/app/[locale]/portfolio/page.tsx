@@ -8,10 +8,35 @@ export default function PortfolioPage() {
     const t = useTranslations('Portfolio');
 
     return (
-        <div className="min-h-screen bg-canvas pt-24 pb-32">
+        <div className="min-h-screen bg-canvas pt-24 pb-32" role="main">
+
+            {/* Structured Data - JSON-LD for Portfolio */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ItemPage",
+                        "name": "ScaleJade Portfolio",
+                        "description": "A selection of projects we've completed for clients across industries",
+                        "mainContentOfPage": {
+                            "@type": "ItemList",
+                            "name": "Featured Projects",
+                            "numberOfItems": portfolioData.length,
+                            "itemListElement": portfolioData.map((project, idx) => ({
+                                "@type": "ListItem",
+                                "position": idx + 1,
+                                "name": project.title,
+                                "description": project.description,
+                                "url": `https://scalejade.com/portfolio/#${project.id}`
+                            }))
+                        }
+                    })
+                }}
+            />
 
             {/* 1. Header Section */}
-            <section className="px-6 max-w-4xl mx-auto text-center mb-32">
+            <section className="px-6 max-w-4xl mx-auto text-center mb-32" aria-labelledby="portfolio-heading">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -21,6 +46,7 @@ export default function PortfolioPage() {
                 </motion.div>
 
                 <motion.h1
+                    id="portfolio-heading"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
@@ -40,7 +66,7 @@ export default function PortfolioPage() {
             </section>
 
             {/* 2. Portfolio Grid (Data Driven) */}
-            <section className="px-6 max-w-7xl mx-auto flex flex-col gap-32">
+            <section className="px-6 max-w-7xl mx-auto flex flex-col gap-32" aria-label="Featured Projects">
                 {portfolioData.map((project, idx) => {
                     // Determine if image should be on the left or right based on odd/even index
                     const isEven = idx % 2 === 0;

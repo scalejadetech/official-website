@@ -7,10 +7,30 @@ export default function DemoPage() {
     const calendlyUrl = "https://calendly.com/connect-scalejade/30min";
 
     return (
-        <div className="min-h-screen bg-canvas pt-24 pb-32">
+        <div className="min-h-screen bg-canvas pt-24 pb-32" role="main">
+
+            {/* Structured Data - JSON-LD for Demo Page */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ContactPage",
+                        "name": "Schedule a Consultation with ScaleJade",
+                        "description": "Connect with ScaleJade senior engineers to discuss your technology needs",
+                        "mainEntity": {
+                            "@type": "ContactPoint",
+                            "telephone": "+1-XXX-XXX-XXXX",
+                            "contactType": "sales",
+                            "email": "connect@scalejade.com",
+                            "availableLanguage": ["English", "Indonesian"]
+                        }
+                    })
+                }}
+            />
 
             {/* 1. Header Section */}
-            <section className="px-6 max-w-5xl mx-auto text-center mb-20">
+            <section className="px-6 max-w-5xl mx-auto text-center mb-20" aria-labelledby="demo-heading">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -21,6 +41,7 @@ export default function DemoPage() {
                 </motion.div>
 
                 <motion.h1
+                    id="demo-heading"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
@@ -40,7 +61,7 @@ export default function DemoPage() {
             </section>
 
             {/* 2. Interactive Portal Grid */}
-            <section className="px-6 max-w-7xl mx-auto">
+            <section className="px-6 max-w-7xl mx-auto" aria-label="Contact Options">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
 
                     {/* Kolom Kiri: Form Inkuiri Langsung */}
@@ -66,41 +87,47 @@ export default function DemoPage() {
                         <form action="mailto:connect@scalejade.com" method="post" encType="text/plain" className="space-y-6">
 
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">
+                                <label htmlFor="organization" className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">
                                     {t('form_org')}
                                 </label>
                                 <input
                                     type="text"
+                                    id="organization"
                                     name="Organization"
                                     required
                                     className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-scalejade-600/50 focus:border-scalejade-600 transition-all"
                                     placeholder="e.g. Central Bank of..."
+                                    aria-required="true"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">
+                                <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">
                                     {t('form_email')}
                                 </label>
                                 <input
                                     type="email"
+                                    id="email"
                                     name="Email"
                                     required
                                     className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-scalejade-600/50 focus:border-scalejade-600 transition-all"
                                     placeholder="name@organization.com"
+                                    aria-required="true"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">
+                                <label htmlFor="requirements" className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">
                                     {t('form_req')}
                                 </label>
                                 <textarea
+                                    id="requirements"
                                     name="Requirements"
                                     required
                                     rows={4}
                                     className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-scalejade-600/50 focus:border-scalejade-600 transition-all resize-none"
                                     placeholder="Describe your architectural needs..."
+                                    aria-required="true"
                                 ></textarea>
                             </div>
 
@@ -143,8 +170,9 @@ export default function DemoPage() {
                                 width="100%"
                                 height="100%"
                                 frameBorder="0"
-                                title="Schedule a Briefing"
+                                title="Schedule a Consultation with ScaleJade"
                                 className="absolute inset-0"
+                                loading="lazy"
                             ></iframe>
                         </div>
                     </motion.div>

@@ -7,7 +7,7 @@
   --color-scalejade-600: #059669;
   --color-scalejade-800: #065f46;
   --color-scalejade-900: #064e3b;
-  --font-sans: var(--font-geist-sans), Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
 
   /* Daftarkan nama animasinya di sini */
   --animate-marquee: marquee 30s linear infinite;

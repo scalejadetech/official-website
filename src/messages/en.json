@@ -1,82 +1,108 @@
 {
     "Hero": {
-        "badge": "Global Infrastructure & Systemic Reliability",
-        "title": "Architecting Intelligence for Global Infrastructure.",
-        "subtitle": "Deploying high-assurance AI, Blockchain, and Infrastructure solutions for financial regulators and industry leaders worldwide.",
-        "cta_primary": "Explore Architecture",
-        "cta_secondary": "Contact Engineering"
+        "badge": "Software · AI · Blockchain · Cloud",
+        "title": "Building Reliable Technology, Together.",
+        "subtitle": "We partner with enterprises and institutions to design and deliver software, AI, blockchain, and cloud solutions that are built to last.",
+        "cta_primary": "Explore Our Services",
+        "cta_secondary": "Start a Conversation"
     },
     "Services": {
-        "ai_title": "Autonomous Intelligence & Predictive Systems",
-        "blockchain_title": "Distributed Ledger Technology & Immutable Security",
-        "infra_title": "Mission-Critical Cloud & Digital Sovereignty"
+        "software_title": "Software Development",
+        "ai_title": "AI & Data Science",
+        "blockchain_title": "Blockchain & DLT",
+        "infra_title": "Cloud Infrastructure"
+    },
+    "Capabilities": {
+        "section_label": "Our Capabilities",
+        "heading": "Four Capabilities. One Standard.",
+        "subheading": "We partner with enterprises and global institutions to deliver reliable technology across the full stack. Every engagement is held to a single standard — built to perform, built to last.",
+        "software_title": "Software Engineering",
+        "software_desc": "We build custom software tailored to the way your organization works — thoughtfully designed, thoroughly tested, and built to scale with your business. Our teams work alongside yours as long-term partners, not short-term vendors.",
+        "software_link": "Explore Software →",
+        "ai_title": "Artificial Intelligence",
+        "ai_desc": "We design and deploy AI systems that give your organization a clear, measurable advantage — from intelligent data pipelines to models your teams can act on with confidence. Our work is grounded in sound engineering, not trend-chasing.",
+        "ai_link": "Explore AI →",
+        "blockchain_title": "Blockchain & Distributed Ledger",
+        "blockchain_desc": "We build transparent, auditable ledger infrastructure for institutions that require absolute record integrity. Whether for settlement, compliance, or supply chain, we deliver networks that hold up under the highest scrutiny.",
+        "blockchain_link": "Explore Blockchain →",
+        "cloud_title": "Cloud Infrastructure",
+        "cloud_desc": "We design and operate secure, compliant cloud environments for organizations that cannot tolerate downtime or compromise. Your team focuses on building; we handle the architecture, governance, and reliability.",
+        "cloud_link": "Explore Cloud →"
     },
     "Sectors": {
-        "finance": "Regulated Markets & Central Banking",
-        "industrial": "Mining, Energy, and Global Supply Chains",
-        "healthcare": "High-Assurance Medical Data Systems"
+        "finance": "Financial Institutions",
+        "education": "Education",
+        "energy": "Energy & Supply Chain",
+        "wholesale": "Wholesale & Distribution",
+        "healthcare": "Healthcare"
     },
     "ServiceDetails": {
-        "header_badge": "Technical Capabilities",
-        "header_title": "Enterprise-Grade Architecture.",
-        "header_sub": "We engineer high-assurance systems designed to operate flawlessly in zero-trust, mission-critical environments.",
-        "ai_desc": "Deploying predictive algorithms and autonomous systems that process systemic data securely, optimizing performance without compromising data sovereignty.",
-        "blockchain_desc": "Implementing consensus-driven distributed ledgers for immutable audit trails, perfect for central banking and regulated asset management.",
-        "infra_desc": "Architecting resilient, multi-region cloud environments that guarantee uptime and strict compliance with global data localization laws."
+        "header_badge": "Our Services",
+        "header_title": "What We Build.",
+        "header_sub": "From custom software to AI systems, blockchain networks, and cloud infrastructure — we cover the full technology stack your enterprise needs.",
+        "software_desc": "We build reliable, well-crafted software tailored to your business — so your team can move fast and grow with confidence.",
+        "ai_desc": "We design and deploy AI systems that help your organization make smarter, faster decisions backed by data you can trust.",
+        "blockchain_desc": "We build transparent, tamper-proof ledger infrastructure that gives institutions the auditability and record integrity they need.",
+        "infra_desc": "We design and manage secure, compliant cloud environments built to scale — so your team can deploy with confidence, every time."
     },
     "SectorDetails": {
-        "header_badge": "Global Application",
-        "header_title": "Engineered for Regulated Markets.",
-        "header_sub": "Our infrastructure powers the most critical sectors of the global economy, where failure is not an option.",
-        "finance_desc": "Providing core settlement infrastructure, CBDC frameworks, and systemic risk mitigation for Tier-1 financial institutions.",
-        "industrial_desc": "Securing massive-scale supply chains and energy grids with immutable tracking and predictive maintenance AI.",
-        "healthcare_desc": "Protecting sovereign health data with zero-knowledge architectures and high-assurance privacy protocols."
+        "header_badge": "Who We Serve",
+        "header_title": "Five Sectors. One Standard.",
+        "header_sub": "We build the technological foundations that power the world's most important industries. Our work is defined by partnership, precision, and a commitment to long-term outcomes.",
+        "finance_desc": "We partner with banks and payment providers to build the core infrastructure that keeps financial services running reliably. From digital payment systems to compliance-ready platforms, we deliver foundations your institution can depend on.",
+        "education_desc": "We help academic institutions and learning platforms modernize the way education is delivered and managed. Our work transforms legacy systems into connected, digital-first environments that serve both educators and students.",
+        "energy_desc": "We give energy companies and logistics operators the operational visibility they need to move with confidence. Our platforms connect the dots across complex supply chains, reducing inefficiency and improving decision-making at every stage.",
+        "wholesale_desc": "We optimize distribution networks for wholesale operators managing commerce at scale. Our systems bring clarity to high-volume operations — from inventory management to order fulfillment — so your business runs smoothly as it grows.",
+        "healthcare_desc": "We build secure, well-structured data systems for healthcare providers and clinical institutions. Our work ensures that sensitive patient data is managed with care, and that technology supports — rather than disrupts — the delivery of quality care.",
+        "cta_title": "Ready to Discuss Your Technical Roadmap?",
+        "cta_sub": "We welcome conversations with industry leaders who are thinking carefully about their technology future. Let us know what you are building — we would be glad to explore how we can help.",
+        "cta_button": "Start a Conversation"
     },
     "TrustSection": {
-        "badge": "Global Ecosystem",
-        "title_main": "Sovereign-Grade Infrastructure. ",
-        "title_highlight": "Universal Execution.",
-        "tag_1": "Tier-1 Financial Institutions",
-        "tag_2": "Global Energy Syndicates",
-        "tag_3": "Regulated Markets",
-        "tag_4": "Government Entities"
+        "badge": "Our Partners",
+        "title_main": "Trusted by industry leaders ",
+        "title_highlight": "to deliver excellence.",
+        "tag_1": "Financial Institutions",
+        "tag_2": "Energy & Resources",
+        "tag_3": "Regulated Industries",
+        "tag_4": "Government & Public Sector"
     },
     "About": {
-        "intro_badge": "Corporate Introduction",
-        "intro_title": "The Standard of Systemic Reliability.",
-        "intro_text": "Scalejade architects the silent engines that power regulated markets and global infrastructure. We do not just build software; we engineer trust for high-stakes environments.",
+        "intro_badge": "About ScaleJade",
+        "intro_title": "A Technology Partner You Can Rely On.",
+        "intro_text": "ScaleJade is a technology firm helping enterprises build the digital foundation for their future — across software, AI, blockchain, and cloud.",
         "who_we_are_title": "Who We Are",
-        "who_we_are_text": "We are a global consortium of systems engineers, cryptographic architects, and infrastructure specialists. Operating exclusively at the intersection of high-assurance security and absolute scalability, our teams are deployed across the world's most demanding sectors to solve complex, mission-critical challenges.",
+        "who_we_are_text": "We are a team of software engineers, data scientists, blockchain developers, and cloud architects with deep experience in regulated and high-growth industries. We work closely with our clients — not just as vendors, but as long-term technology partners committed to your success.",
         "mission_title": "Our Mission",
-        "mission_text": "To deploy sovereign-grade infrastructure that guarantees operational continuity, digital sovereignty, and algorithmic trust for the entities that power the global economy.",
-        "values_title": "Core Values",
-        "value_1_title": "Absolute Resilience",
-        "value_1_desc": "We engineer systems designed to withstand absolute worst-case scenarios, ensuring zero-downtime operational continuity.",
-        "value_2_title": "Cryptographic Certainty",
-        "value_2_desc": "Security is not an overlay; it is the foundation. We operate on mathematical proof, never on assumed trust.",
-        "value_3_title": "Digital Sovereignty",
-        "value_3_desc": "We embed data localization and compliance directly into our network layers to protect regional regulatory frameworks.",
-        "value_4_title": "Systemic Scale",
-        "value_4_desc": "Every architecture we deploy is capable of handling the transaction velocity of Tier-1 financial institutions."
+        "mission_text": "To help enterprises and institutions build technology they can depend on — reliable, secure, and ready to grow with their business.",
+        "values_title": "Our Values",
+        "value_1_title": "Reliability First",
+        "value_1_desc": "We build systems designed to hold up under real-world demands — whether you're serving hundreds or millions of users.",
+        "value_2_title": "Security by Design",
+        "value_2_desc": "Security isn't an afterthought — it's built into every layer of what we deliver, from architecture to deployment.",
+        "value_3_title": "Compliance-Ready",
+        "value_3_desc": "We understand the regulatory environments our clients operate in, and we design our systems to meet them.",
+        "value_4_title": "Built to Scale",
+        "value_4_desc": "Every solution we build is designed with growth in mind, so your technology evolves as your organization does."
     },
     "Portfolio": {
-        "badge": "Proven Execution",
-        "title": "Systemic Case Studies.",
-        "subtitle": "A track record of deploying mission-critical infrastructure. Explore how we solve the most complex architectural challenges for regulated markets worldwide.",
-        "view_live": "View Architecture Specs",
-        "metrics_header": "Systemic Impact",
-        "tech_header": "Core Infrastructure"
+        "badge": "Our Work",
+        "title": "Projects We're Proud Of.",
+        "subtitle": "A selection of work we've done for clients across industries — from financial platforms to AI-powered systems and blockchain networks.",
+        "view_live": "View Case Study",
+        "metrics_header": "Key Results",
+        "tech_header": "Technologies Used"
     },
     "Demo": {
-        "badge": "Secure Portal",
-        "title": "Initiate Deployment.",
-        "subtitle": "Engage with our engineering architects to discuss your systemic requirements, request a technical audit, or schedule a secure briefing.",
-        "form_title": "Direct Inquiry",
+        "badge": "Let's Work Together",
+        "title": "Ready to Start a Conversation?",
+        "subtitle": "Tell us about your project and we'll find a time to connect. No pressure — just a straightforward discussion about what we can build together.",
+        "form_title": "Send Us a Message",
         "form_org": "Organization Name",
         "form_email": "Business Email",
-        "form_req": "Business Requirements",
-        "form_submit": "Submit Request",
-        "cal_title": "Schedule a Briefing",
-        "cal_desc": "Select an available window to speak directly with a Lead Systems Architect."
+        "form_req": "What are you working on?",
+        "form_submit": "Send Message",
+        "cal_title": "Schedule a Call",
+        "cal_desc": "Pick a time that suits you to connect with one of our senior engineers."
     }
 }
