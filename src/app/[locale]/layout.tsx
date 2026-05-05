@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -7,9 +7,9 @@ import { Footer } from '@/components/Footer';
 import '@/app/globals.css';
 import { Metadata } from 'next';
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
 });
 
 const locales = ['en', 'id'];
@@ -96,7 +96,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} antialiased scroll-smooth`}>
+    <html lang={locale} className={`${dmSans.variable} antialiased scroll-smooth`}>
       <body className="flex flex-col min-h-screen bg-canvas text-slate-900 font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
           

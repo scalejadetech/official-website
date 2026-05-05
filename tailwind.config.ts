@@ -19,7 +19,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        sans: ['var(--font-dm-sans)', 'DM Sans', 'sans-serif'],
       },
     },
   },

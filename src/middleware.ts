@@ -12,11 +12,11 @@ export default function middleware(request: NextRequest) {
   const country = request.headers.get('x-vercel-ip-country');
   
   // If the user hits the root domain and is in Indonesia, route to /id
-  if (country === 'ID' && request.nextUrl.pathname === '/') {
-    const url = request.nextUrl.clone();
-    url.pathname = '/id';
-    return NextResponse.redirect(url);
-  }
+  // if (country === 'ID' && request.nextUrl.pathname === '/') {
+  //   const url = request.nextUrl.clone();
+  //   url.pathname = '/id';
+  //   return NextResponse.redirect(url);
+  // }
 
   return intlMiddleware(request);
 }
