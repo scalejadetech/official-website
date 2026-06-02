@@ -34,7 +34,9 @@
         "education": "Education",
         "energy": "Energy & Supply Chain",
         "wholesale": "Wholesale & Distribution",
-        "healthcare": "Healthcare"
+        "healthcare": "Healthcare",
+        "mining": "Mining & Resources",
+        "manufacturing": "Manufacturing"
     },
     "ServiceDetails": {
         "header_badge": "Our Services",
@@ -47,16 +49,30 @@
     },
     "SectorDetails": {
         "header_badge": "Who We Serve",
-        "header_title": "Five Sectors. One Standard.",
+        "header_title": "Seven Sectors. One Standard.",
         "header_sub": "We build the technological foundations that power the world's most important industries. Our work is defined by partnership, precision, and a commitment to long-term outcomes.",
         "finance_desc": "We partner with banks and payment providers to build the core infrastructure that keeps financial services running reliably. From digital payment systems to compliance-ready platforms, we deliver foundations your institution can depend on.",
         "education_desc": "We help academic institutions and learning platforms modernize the way education is delivered and managed. Our work transforms legacy systems into connected, digital-first environments that serve both educators and students.",
         "energy_desc": "We give energy companies and logistics operators the operational visibility they need to move with confidence. Our platforms connect the dots across complex supply chains, reducing inefficiency and improving decision-making at every stage.",
         "wholesale_desc": "We optimize distribution networks for wholesale operators managing commerce at scale. Our systems bring clarity to high-volume operations — from inventory management to order fulfillment — so your business runs smoothly as it grows.",
         "healthcare_desc": "We build secure, well-structured data systems for healthcare providers and clinical institutions. Our work ensures that sensitive patient data is managed with care, and that technology supports — rather than disrupts — the delivery of quality care.",
+        "mining_desc": "We equip mining and natural resource companies with robust operational systems that improve site management, safety compliance, and resource tracking. Our technology connects field operations with back-office teams — reducing downtime and increasing extraction efficiency.",
+        "manufacturing_desc": "We help manufacturers modernize production workflows through integrated systems that connect the factory floor to the supply chain. From inventory automation to quality management, our platforms reduce operational friction and enable smarter manufacturing at scale.",
         "cta_title": "Ready to Discuss Your Technical Roadmap?",
         "cta_sub": "We welcome conversations with industry leaders who are thinking carefully about their technology future. Let us know what you are building — we would be glad to explore how we can help.",
         "cta_button": "Start a Conversation"
+    },
+    "ServiceApproach": {
+        "label": "Our Method",
+        "body": "Build the systems that regulated industries and critical enterprises depend on — through engineering precision, deep domain context, and an unwavering commitment to outcomes that endure long after deployment.",
+        "story_label": "From the Field",
+        "story_title": "When Milliseconds Define Compliance",
+        "story_intro": "In financial services, a delayed transaction is a questioned transaction. We asked: what if compliance checking could run faster than the transaction itself?",
+        "story_p1": "Working alongside a regional bank managing high-frequency payment flows across six markets, we built a real-time compliance engine that screens every transaction against live regulatory rule sets in under 50 milliseconds. The system ingests jurisdiction-specific data, applies institution-defined thresholds, and flags anomalies before funds clear — not after.",
+        "story_p2": "This was not a matter of tuning an existing vendor tool. We designed the architecture from scratch around a single constraint: compliance at the speed of commerce. Every decision — from data pipeline design to alert triage logic — was made with that constraint as the governing principle.",
+        "story_p3": "Today, the platform processes over three million transactions daily with no production downtime since launch. More importantly, it gave the bank's compliance team a system they could explain to regulators, operate with confidence, and extend as requirements evolve. That is what we mean when we say we build to last.",
+        "advantage_label": "What Sets Us Apart",
+        "advantage_title": "Our Competitive\nEdge"
     },
     "TrustSection": {
         "badge": "Our Partners",

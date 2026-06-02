@@ -23,11 +23,13 @@ export function Navigation({ locale }: { locale: string }) {
         return `/${nextLocale}`;
     };
 
+    const prefix = locale === 'en' ? '' : `/${locale}`;
+
     const navLinks = [
-        { name: 'Services', href: `/${locale}/services` },
-        { name: 'Sectors', href: `/${locale}/sectors` },
-        // { name: 'Portfolio', href: `/${locale}/portfolio` },
-        { name: 'Who We Are', href: `/${locale}/about` },
+        { name: 'Services', href: `${prefix}/services` },
+        { name: 'Sectors', href: `${prefix}/sectors` },
+        // { name: 'Portfolio', href: `${prefix}/portfolio` },
+        { name: 'Who We Are', href: `${prefix}/about` },
     ];
 
     return (
@@ -37,7 +39,7 @@ export function Navigation({ locale }: { locale: string }) {
 
                 {/* Kiri: Identitas Merek */}
                 <div className="flex-1 flex justify-start">
-                    <Link href={`/${locale}`} className="flex items-center transition-transform duration-300 hover:opacity-80">
+                    <Link href={prefix || '/'} className="flex items-center transition-transform duration-300 hover:opacity-80">
                         <Image
                             src="/scalejade-green-withtext.svg"
                             alt="ScaleJade Logo"
@@ -74,7 +76,7 @@ export function Navigation({ locale }: { locale: string }) {
                     </a>
 
                     <Link
-                        href={`/${locale}/demo`}
+                        href={`${prefix}/demo`}
                         className="hidden md:block bg-slate-900 hover:bg-scalejade-800 text-white text-sm font-medium px-5 py-2.5 rounded-md transition-all"
                     >
                         Client Portal

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: 'ScaleJade | Software Engineering · AI · Blockchain & Cloud Infrastructure',
     template: '%s | ScaleJade',
   },
-  description: 'ScaleJade is a technology firm helping enterprises build reliable software, AI systems, blockchain networks, and cloud infrastructure — built to perform, built to last.',
+  description: 'ScaleJade (PT Skala Kecerdasan Nusantara / ScaleJade Technology Ltd) is a technology firm helping enterprises build reliable software, AI systems, blockchain networks, and cloud infrastructure — built to perform, built to last.',
   keywords: [
     'software engineering',
     'AI & data science',
@@ -31,7 +31,13 @@ export const metadata: Metadata = {
     'AI systems',
     'blockchain networks',
     'cloud architecture',
-    'ScaleJade'
+    'ScaleJade',
+    'PT Skala Kecerdasan Nusantara',
+    'ScaleJade Technology',
+    'enterprise software Singapore',
+    'enterprise software Indonesia',
+    'technology firm Singapore',
+    'software company Jakarta',
   ],
   authors: [{ name: 'ScaleJade', url: 'https://scalejade.com' }],
   creator: 'ScaleJade',
@@ -97,6 +103,48 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`${dmSans.variable} antialiased scroll-smooth`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "ScaleJade",
+              "alternateName": ["PT Skala Kecerdasan Nusantara", "ScaleJade Technology Ltd"],
+              "url": "https://scalejade.com",
+              "logo": "https://scalejade.com/scalejade-green-withtext.svg",
+              "description": "ScaleJade is a technology firm helping enterprises build reliable software, AI systems, blockchain networks, and cloud infrastructure for regulated industries.",
+              "sameAs": [
+                "https://x.com/ScaleJade",
+                "https://www.linkedin.com/company/scalejade"
+              ],
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "9 Raffles Place, #16-20 Republic Plaza II",
+                  "addressLocality": "Singapore",
+                  "postalCode": "048619",
+                  "addressCountry": "SG"
+                },
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Kb. Melati, Kecamatan Tanah Abang",
+                  "addressLocality": "Jakarta Pusat",
+                  "addressRegion": "DKI Jakarta",
+                  "postalCode": "10230",
+                  "addressCountry": "ID"
+                }
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "url": "https://scalejade.com/demo"
+              }
+            })
+          }}
+        />
+      </head>
       <body className="flex flex-col min-h-screen bg-canvas text-slate-900 font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
           

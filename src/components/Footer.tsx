@@ -12,20 +12,45 @@ export function Footer() {
                 <div className="md:max-w-sm">
                     <div className="mb-6 flex items-center">
                         <Image
-                            src="/scalejade-white-withtext.svg"       /* Ensure this matches your file name in /public */
+                            src="/scalejade-white-withtext.svg"
                             alt="ScaleJade Logo"
-                            width={200}           /* Made slightly larger (200px) to match the previous 3xl text size */
+                            width={200}
                             height={48}
                             className="object-contain transition-opacity hover:opacity-90"
                         />
                     </div>
-                    <p className="text-scalejade-100/70 text-sm leading-relaxed">
+                    <p className="text-scalejade-100/70 text-sm leading-relaxed mb-6">
                         Architecting high-assurance intelligence and mission-critical infrastructure for regulated markets worldwide.
+                    </p>
+                    <p className="text-scalejade-100/40 text-xs leading-relaxed">
+                        PT Skala Kecerdasan Nusantara<br />
+                        ScaleJade Technology Ltd
                     </p>
                 </div>
 
                 {/* Kanan: Navigasi & Socials */}
-                <div className="flex flex-col sm:flex-row gap-12 md:gap-24">
+                <div className="flex flex-col sm:flex-row gap-12 md:gap-16 lg:gap-24">
+
+                    {/* Kolom Offices */}
+                    <div>
+                        <h4 className="text-white font-semibold mb-6 tracking-wider text-sm uppercase">
+                            Offices
+                        </h4>
+                        <ul className="space-y-5 text-xs text-scalejade-100/60 leading-relaxed">
+                            <li>
+                                <p className="text-scalejade-100/40 font-semibold uppercase tracking-widest text-[10px] mb-1">Singapore</p>
+                                9 Raffles Place, #16-20<br />
+                                Republic Plaza II<br />
+                                Singapore 048619
+                            </li>
+                            <li>
+                                <p className="text-scalejade-100/40 font-semibold uppercase tracking-widest text-[10px] mb-1">Jakarta</p>
+                                Kb. Melati, Tanah Abang<br />
+                                Jakarta Pusat 10230<br />
+                                Indonesia
+                            </li>
+                        </ul>
+                    </div>
 
                     {/* Kolom Tautan */}
                     <div>
@@ -38,7 +63,7 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Kolom Follow Us (Persis seperti Screenshot) */}
+                    {/* Kolom Follow Us */}
                     <div>
                         <h4 className="text-white font-semibold mb-6 tracking-widest text-sm uppercase">
                             Follow Us

@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Landmark, GraduationCap, Zap, Package, Heart } from 'lucide-react';
+import { Landmark, GraduationCap, Zap, Package, Heart, Pickaxe, Factory } from 'lucide-react';
 import * as motion from "framer-motion/client";
 import Link from 'next/link';
 
@@ -13,6 +13,8 @@ export default function SectorsPage() {
         { id: 'energy', title: s('energy'), desc: t('energy_desc'), icon: Zap },
         { id: 'wholesale', title: s('wholesale'), desc: t('wholesale_desc'), icon: Package },
         { id: 'healthcare', title: s('healthcare'), desc: t('healthcare_desc'), icon: Heart },
+        { id: 'mining', title: s('mining'), desc: t('mining_desc'), icon: Pickaxe },
+        { id: 'manufacturing', title: s('manufacturing'), desc: t('manufacturing_desc'), icon: Factory },
     ];
 
     return (
@@ -35,7 +37,9 @@ export default function SectorsPage() {
                                     { "@type": "ListItem", "position": 2, "name": "Education", "description": "Digital transformation and modernizing learning platforms for academic institutions." },
                                     { "@type": "ListItem", "position": 3, "name": "Energy & Supply Chain", "description": "Operational visibility and efficiency for energy companies and logistics operators." },
                                     { "@type": "ListItem", "position": 4, "name": "Wholesale & Distribution", "description": "Optimizing distribution networks and commerce at scale for wholesale operators." },
-                                    { "@type": "ListItem", "position": 5, "name": "Healthcare", "description": "Secure data management and clinical excellence for healthcare providers." }
+                                    { "@type": "ListItem", "position": 5, "name": "Healthcare", "description": "Secure data management and clinical excellence for healthcare providers." },
+                                    { "@type": "ListItem", "position": 6, "name": "Mining & Resources", "description": "Operational systems for site management, safety compliance, and resource tracking." },
+                                    { "@type": "ListItem", "position": 7, "name": "Manufacturing", "description": "Integrated systems connecting the factory floor to the supply chain at scale." }
                                 ]
                             }
                         })
@@ -72,7 +76,7 @@ export default function SectorsPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: idx * 0.08 }}
-                                    className={`flex flex-col p-8 border border-slate-200 rounded-2xl bg-white hover:shadow-xl hover:shadow-scalejade-900/5 transition-all group${isLast ? ' md:col-span-2 md:max-w-[calc(50%-12px)]' : ''}`}
+                                    className={`flex flex-col p-8 border border-slate-200 rounded-2xl bg-white hover:shadow-xl hover:shadow-scalejade-900/5 transition-all group${isLast && sectors.length % 2 !== 0 ? ' md:col-span-2 md:max-w-[calc(50%-12px)] md:mx-auto' : ''}`}
                                 >
                                     <div className="flex items-center gap-4 mb-5">
                                         <div className="p-3 bg-scalejade-900 text-white rounded-xl group-hover:bg-scalejade-600 transition-colors shrink-0">

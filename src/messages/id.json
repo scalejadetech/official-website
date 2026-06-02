@@ -34,7 +34,9 @@
         "education": "Pendidikan",
         "energy": "Energi & Rantai Pasok",
         "wholesale": "Grosir & Distribusi",
-        "healthcare": "Layanan Kesehatan"
+        "healthcare": "Layanan Kesehatan",
+        "mining": "Pertambangan & Sumber Daya",
+        "manufacturing": "Manufaktur"
     },
     "ServiceDetails": {
         "header_badge": "Layanan Kami",
@@ -47,16 +49,30 @@
     },
     "SectorDetails": {
         "header_badge": "Yang Kami Layani",
-        "header_title": "Lima Sektor. Satu Standar.",
+        "header_title": "Tujuh Sektor. Satu Standar.",
         "header_sub": "Kami membangun fondasi teknologi yang menggerakkan industri-industri terpenting di dunia. Pekerjaan kami didefinisikan oleh kemitraan, presisi, dan komitmen terhadap hasil jangka panjang.",
         "finance_desc": "Kami bermitra dengan bank dan penyedia pembayaran untuk membangun infrastruktur inti yang menjaga layanan keuangan berjalan dengan andal. Dari sistem pembayaran digital hingga platform siap regulasi, kami menghadirkan fondasi yang dapat diandalkan institusi Anda.",
         "education_desc": "Kami membantu institusi akademik dan platform pembelajaran memodernisasi cara pendidikan disampaikan dan dikelola. Pekerjaan kami mengubah sistem yang usang menjadi lingkungan digital yang terhubung, melayani baik pendidik maupun pelajar.",
         "energy_desc": "Kami memberikan visibilitas operasional yang dibutuhkan perusahaan energi dan operator logistik untuk bergerak dengan percaya diri. Platform kami menghubungkan berbagai titik dalam rantai pasok yang kompleks, mengurangi inefisiensi dan meningkatkan pengambilan keputusan di setiap tahap.",
         "wholesale_desc": "Kami mengoptimalkan jaringan distribusi untuk operator grosir yang mengelola perdagangan dalam skala besar. Sistem kami membawa kejelasan pada operasi bervolume tinggi — dari manajemen inventaris hingga pemenuhan pesanan — sehingga bisnis Anda berjalan lancar seiring pertumbuhannya.",
         "healthcare_desc": "Kami membangun sistem data yang aman dan terstruktur untuk penyedia layanan kesehatan dan institusi klinis. Pekerjaan kami memastikan data pasien yang sensitif dikelola dengan baik, dan teknologi mendukung — bukan mengganggu — pemberian layanan kesehatan berkualitas.",
+        "mining_desc": "Kami membekali perusahaan pertambangan dan sumber daya alam dengan sistem operasional yang andal untuk meningkatkan manajemen lokasi, kepatuhan keselamatan, dan pelacakan sumber daya. Teknologi kami menghubungkan operasi lapangan dengan tim back-office — mengurangi downtime dan meningkatkan efisiensi ekstraksi.",
+        "manufacturing_desc": "Kami membantu produsen memodernisasi alur kerja produksi melalui sistem terintegrasi yang menghubungkan lantai pabrik dengan rantai pasok. Dari otomatisasi inventaris hingga manajemen kualitas, platform kami mengurangi hambatan operasional dan memungkinkan manufaktur yang lebih cerdas dalam skala besar.",
         "cta_title": "Siap Mendiskusikan Peta Jalan Teknologi Anda?",
         "cta_sub": "Kami menyambut percakapan dengan pemimpin industri yang sedang memikirkan masa depan teknologi mereka dengan serius. Beri tahu kami apa yang sedang Anda bangun — kami akan dengan senang hati mengeksplorasi bagaimana kami dapat membantu.",
         "cta_button": "Mulai Percakapan"
+    },
+    "ServiceApproach": {
+        "label": "Metode Kami",
+        "body": "Membangun sistem yang diandalkan oleh industri terregulasi dan perusahaan kritis — melalui presisi rekayasa, konteks domain yang mendalam, dan komitmen teguh terhadap hasil yang bertahan jauh melampaui masa implementasi.",
+        "story_label": "Dari Lapangan",
+        "story_title": "Ketika Milidetik Menentukan Kepatuhan",
+        "story_intro": "Dalam layanan keuangan, transaksi yang tertunda adalah transaksi yang dipertanyakan. Kami bertanya: bagaimana jika pemeriksaan kepatuhan bisa berjalan lebih cepat dari transaksinya sendiri?",
+        "story_p1": "Bekerja bersama sebuah bank regional yang mengelola aliran pembayaran frekuensi tinggi di enam pasar, kami membangun mesin kepatuhan real-time yang memproses setiap transaksi berdasarkan aturan regulasi yang berlaku dalam waktu di bawah 50 milidetik. Sistem ini mengonsumsi data spesifik yurisdiksi, menerapkan ambang batas yang ditentukan institusi, dan menandai anomali sebelum dana berpindah — bukan setelahnya.",
+        "story_p2": "Ini bukan soal menyesuaikan alat vendor yang sudah ada. Kami merancang arsitektur dari nol berdasarkan satu batasan: kepatuhan sesuai kecepatan perdagangan. Setiap keputusan — dari desain pipeline data hingga logika triase peringatan — dibuat dengan batasan tersebut sebagai prinsip utama.",
+        "story_p3": "Hari ini, platform tersebut memproses lebih dari tiga juta transaksi setiap hari tanpa gangguan produksi sejak diluncurkan. Yang lebih penting, sistem ini memberi tim kepatuhan bank sebuah platform yang bisa dijelaskan kepada regulator, dioperasikan dengan percaya diri, dan diperluas seiring perubahan regulasi. Itulah yang kami maksud ketika kami mengatakan kami membangun untuk bertahan.",
+        "advantage_label": "Yang Membedakan Kami",
+        "advantage_title": "Keunggulan\nKompetitif Kami"
     },
     "TrustSection": {
         "badge": "Mitra Kami",
