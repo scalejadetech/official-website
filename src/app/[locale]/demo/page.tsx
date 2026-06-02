@@ -1,6 +1,48 @@
 import { useTranslations } from 'next-intl';
 import * as motion from "framer-motion/client";
 import { Mail, CalendarDays, ArrowRight, ShieldAlert } from 'lucide-react';
+import { Metadata } from 'next';
+
+const BASE = 'https://scalejade.com';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const isId = locale === 'id';
+    const canonical = `${BASE}/${locale}/demo`;
+
+    const title = isId ? 'Mulai Percakapan | ScaleJade' : 'Start a Conversation | ScaleJade';
+    const description = isId
+        ? 'Ceritakan tentang proyek Anda dan kami akan menemukan waktu untuk terhubung. Diskusi langsung tentang apa yang bisa kita bangun bersama.'
+        : 'Tell us about your project and we will find a time to connect. A straightforward discussion about what we can build together — no pressure.';
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical,
+            languages: {
+                'en': `${BASE}/en/demo`,
+                'id': `${BASE}/id/demo`,
+                'x-default': `${BASE}/en/demo`,
+            },
+        },
+        openGraph: {
+            type: 'website',
+            url: canonical,
+            title,
+            description,
+            siteName: 'ScaleJade',
+            locale: isId ? 'id_ID' : 'en_US',
+            images: [{ url: `${BASE}/opengraph-image`, width: 1200, height: 630, alt: 'Contact ScaleJade' }],
+        },
+        twitter: { card: 'summary_large_image', title, description, images: [`${BASE}/opengraph-image`] },
+        robots: { index: false, follow: false },
+    };
+}
 
 export default function DemoPage() {
     const t = useTranslations('Demo');

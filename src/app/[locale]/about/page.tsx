@@ -1,6 +1,47 @@
 import { useTranslations } from 'next-intl';
 import * as motion from "framer-motion/client";
 import { ShieldCheck, ActivitySquare, Globe, LockKeyhole } from 'lucide-react';
+import { Metadata } from 'next';
+
+const BASE = 'https://scalejade.com';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const isId = locale === 'id';
+    const canonical = `${BASE}/${locale}/about`;
+
+    const title = isId ? 'Tentang Kami | ScaleJade' : 'About Us | ScaleJade';
+    const description = isId
+        ? 'ScaleJade adalah perusahaan teknologi yang bermitra dengan perusahaan dan institusi untuk membangun fondasi digital mereka — di bidang software, AI, blockchain, dan cloud. Berkantor di Singapura dan Jakarta.'
+        : 'ScaleJade is a technology firm partnering with enterprises and institutions to build their digital foundation — across software, AI, blockchain, and cloud. Headquartered in Singapore and Jakarta.';
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical,
+            languages: {
+                'en': `${BASE}/en/about`,
+                'id': `${BASE}/id/about`,
+                'x-default': `${BASE}/en/about`,
+            },
+        },
+        openGraph: {
+            type: 'website',
+            url: canonical,
+            title,
+            description,
+            siteName: 'ScaleJade',
+            locale: isId ? 'id_ID' : 'en_US',
+            images: [{ url: `${BASE}/opengraph-image`, width: 1200, height: 630, alt: 'About ScaleJade' }],
+        },
+        twitter: { card: 'summary_large_image', title, description, images: [`${BASE}/opengraph-image`] },
+    };
+}
 
 export default function AboutPage() {
     const t = useTranslations('About');

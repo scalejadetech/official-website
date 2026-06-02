@@ -2,6 +2,47 @@ import { useTranslations } from 'next-intl';
 import { Landmark, GraduationCap, Zap, Package, Heart, Pickaxe, Factory } from 'lucide-react';
 import * as motion from "framer-motion/client";
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+const BASE = 'https://scalejade.com';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const isId = locale === 'id';
+    const canonical = `${BASE}/${locale}/sectors`;
+
+    const title = isId ? 'Industri yang Kami Layani | ScaleJade' : 'Industries We Serve | ScaleJade';
+    const description = isId
+        ? 'ScaleJade melayani institusi keuangan, energi & sumber daya, layanan kesehatan, pendidikan, manufaktur, pertambangan, dan grosir & distribusi di seluruh Asia Tenggara.'
+        : 'ScaleJade serves financial institutions, energy & resources, healthcare, education, manufacturing, mining, and wholesale & distribution across Southeast Asia and beyond.';
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical,
+            languages: {
+                'en': `${BASE}/en/sectors`,
+                'id': `${BASE}/id/sectors`,
+                'x-default': `${BASE}/en/sectors`,
+            },
+        },
+        openGraph: {
+            type: 'website',
+            url: canonical,
+            title,
+            description,
+            siteName: 'ScaleJade',
+            locale: isId ? 'id_ID' : 'en_US',
+            images: [{ url: `${BASE}/opengraph-image`, width: 1200, height: 630, alt: 'Industries ScaleJade Serves' }],
+        },
+        twitter: { card: 'summary_large_image', title, description, images: [`${BASE}/opengraph-image`] },
+    };
+}
 
 export default function SectorsPage() {
     const t = useTranslations('SectorDetails');

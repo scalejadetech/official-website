@@ -3,6 +3,47 @@ import Image from 'next/image';
 import * as motion from "framer-motion/client";
 import portfolioData from '@/data/portfolio.json';
 import { ArrowRight, ShieldCheck, Activity } from 'lucide-react';
+import { Metadata } from 'next';
+
+const BASE = 'https://scalejade.com';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const isId = locale === 'id';
+    const canonical = `${BASE}/${locale}/portfolio`;
+
+    const title = isId ? 'Portofolio | ScaleJade' : 'Portfolio | ScaleJade';
+    const description = isId
+        ? 'Pilihan proyek yang telah kami kerjakan untuk klien di berbagai industri — dari platform keuangan hingga sistem AI dan jaringan blockchain.'
+        : 'A selection of work we have delivered for clients across industries — from financial platforms to AI-powered systems and blockchain networks.';
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical,
+            languages: {
+                'en': `${BASE}/en/portfolio`,
+                'id': `${BASE}/id/portfolio`,
+                'x-default': `${BASE}/en/portfolio`,
+            },
+        },
+        openGraph: {
+            type: 'website',
+            url: canonical,
+            title,
+            description,
+            siteName: 'ScaleJade',
+            locale: isId ? 'id_ID' : 'en_US',
+            images: [{ url: `${BASE}/opengraph-image`, width: 1200, height: 630, alt: 'ScaleJade Portfolio' }],
+        },
+        twitter: { card: 'summary_large_image', title, description, images: [`${BASE}/opengraph-image`] },
+    };
+}
 
 export default function PortfolioPage() {
     const t = useTranslations('Portfolio');

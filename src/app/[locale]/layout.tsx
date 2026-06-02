@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import '@/app/globals.css';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -14,34 +14,51 @@ const dmSans = DM_Sans({
 
 const locales = ['en', 'id'];
 
+const BASE = 'https://scalejade.com';
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f1a13' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://scalejade.com'),
+  metadataBase: new URL(BASE),
   title: {
-    default: 'ScaleJade | Software Engineering · AI · Blockchain & Cloud Infrastructure',
+    default: 'ScaleJade | Software Engineering · AI · Data Analytics · Blockchain & Cloud',
     template: '%s | ScaleJade',
   },
-  description: 'ScaleJade (PT Skala Kecerdasan Nusantara / ScaleJade Technology Ltd) is a technology firm helping enterprises build reliable software, AI systems, blockchain networks, and cloud infrastructure — built to perform, built to last.',
+  description: 'ScaleJade (PT Skala Kecerdasan Nusantara / ScaleJade Technology Ltd) is a technology firm helping enterprises build reliable software, AI systems, data analytics, blockchain networks, and cloud infrastructure — built to perform, built to last.',
   keywords: [
     'software engineering',
-    'AI & data science',
-    'blockchain & distributed ledger',
+    'artificial intelligence',
+    'data analytics',
+    'blockchain distributed ledger',
     'cloud infrastructure',
     'enterprise technology',
-    'custom software development',
-    'AI systems',
-    'blockchain networks',
-    'cloud architecture',
+    'custom software development Singapore',
+    'AI systems Indonesia',
+    'MLOps',
+    'data engineering',
+    'LLM application development',
     'ScaleJade',
     'PT Skala Kecerdasan Nusantara',
-    'ScaleJade Technology',
+    'ScaleJade Technology Ltd',
     'enterprise software Singapore',
     'enterprise software Indonesia',
     'technology firm Singapore',
     'software company Jakarta',
+    'regulated industries technology',
+    'financial technology Asia',
   ],
-  authors: [{ name: 'ScaleJade', url: 'https://scalejade.com' }],
+  authors: [{ name: 'ScaleJade', url: BASE }],
   creator: 'ScaleJade',
   publisher: 'ScaleJade',
+  formatDetection: { email: false, address: false, telephone: false },
   robots: {
     index: true,
     follow: true,
@@ -56,16 +73,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://scalejade.com',
+    url: BASE,
     siteName: 'ScaleJade',
     title: 'ScaleJade | Enterprise Software & Technology Solutions',
-    description: 'Building reliable technology for enterprises — software engineering, AI, blockchain, and cloud infrastructure designed to scale.',
+    description: 'Building reliable technology for enterprises — software engineering, AI, data analytics, blockchain, and cloud infrastructure for regulated industries.',
     images: [
       {
-        url: 'https://scalejade.com/og-image.jpg',
+        url: `${BASE}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: 'ScaleJade - Enterprise Technology Partner',
+        alt: 'ScaleJade — Built to perform, built to last.',
+        type: 'image/png',
       },
     ],
   },
@@ -74,18 +92,20 @@ export const metadata: Metadata = {
     site: '@ScaleJade',
     creator: '@ScaleJade',
     title: 'ScaleJade | Enterprise Software & Technology',
-    description: 'Software engineering, AI, blockchain & cloud infrastructure for regulated industries and enterprises.',
-    images: ['https://scalejade.com/og-image.jpg'],
+    description: 'Software engineering, AI, data analytics, blockchain & cloud for regulated industries and enterprises.',
+    images: [`${BASE}/opengraph-image`],
   },
   alternates: {
-    canonical: 'https://scalejade.com',
+    canonical: BASE,
     languages: {
-      'en-US': 'https://scalejade.com/en',
-      'id-ID': 'https://scalejade.com/id',
+      'en': `${BASE}/en`,
+      'id': `${BASE}/id`,
+      'x-default': `${BASE}/en`,
     },
   },
   category: 'Technology',
   classification: 'Enterprise Technology Services',
+  referrer: 'origin-when-cross-origin',
 };
 
 export default async function RootLayout({
