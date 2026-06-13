@@ -1,5 +1,10 @@
 [
   {
+    "id": "bank-indonesia",
+    "name": "Bank Indonesia",
+    "logo_url": "/logos/bank-indonesia.svg"
+  },
+  {
     "id": "sbmitb",
     "name": "SBM ITB",
     "logo_url": "/logos/sbmitb.svg"
