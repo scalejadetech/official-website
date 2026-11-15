@@ -62,6 +62,9 @@ const categoryCovers: Record<string, string[]> = {
 
 const FALLBACK_COVERS = categoryCovers["Company"];
 
+/** The categories that have their own cover photography. */
+export const BLOG_CATEGORIES = Object.keys(categoryCovers);
+
 /** Small, stable string hash — picks the same cover for a slug every time. */
 function pick<T>(items: T[], key: string): T {
     let h = 0;

@@ -12,6 +12,20 @@ const nextConfig = {
             { protocol: 'https' as const, hostname: '*.supabase.co', pathname: '/storage/v1/object/public/**' },
         ],
     },
+    async headers() {
+        return [
+            // The admin dashboard is unlinked and must never be indexed. It is
+            // deliberately left out of robots.txt, which would advertise it.
+            {
+                source: '/admin/:path*',
+                headers: [
+                    { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+                    { key: 'Cache-Control', value: 'no-store' },
+                    { key: 'Referrer-Policy', value: 'no-referrer' },
+                ],
+            },
+        ];
+    },
     async redirects() {
         return [
             // /demo was a sales contact form, not a product demo. Renamed to

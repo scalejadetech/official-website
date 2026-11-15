@@ -23,6 +23,7 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Skip all paths that should not be internationalized
-  matcher: ['/((?!api|_next|.*\\..*).*)']
+  // Skip all paths that should not be internationalized. /admin is English-only
+  // and has its own root layout (src/app/admin).
+  matcher: ['/((?!api|admin|_next|.*\\..*).*)']
 };
