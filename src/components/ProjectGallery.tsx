@@ -67,11 +67,10 @@ export function ProjectGallery({ images, labels }: { images: GalleryImage[]; lab
 
     if (images.length === 0) return null;
 
-    const [lead, ...rest] = images;
     const current = active === null ? null : images[active];
 
-    const tile = (image: GalleryImage, index: number, aspect: string, sizes: string, priority = false) => (
-        <figure key={image.id}>
+    const tile = (image: GalleryImage, index: number, aspect: string, sizes: string, priority = false, className = '') => (
+        <figure key={image.id} className={className}>
             <button
                 type="button"
                 onClick={() => open(index)}
@@ -94,13 +93,16 @@ export function ProjectGallery({ images, labels }: { images: GalleryImage[]; lab
 
     return (
         <>
-            <div className="space-y-8">
-                {tile(lead, 0, 'aspect-[16/9]', '(max-width: 1024px) 100vw, 1024px', true)}
-                {rest.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                        {rest.map((image, i) => tile(image, i + 1, 'aspect-[4/3]', '(max-width: 640px) 100vw, 512px'))}
-                    </div>
-                )}
+            {/* A 2 × N grid: two images per row, one per row on phones. With an odd
+                count the last image spans both columns; 8:3 keeps it the same
+                height as a row of two 4:3 images. */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {images.map((image, i) => {
+                    const spansRow = images.length % 2 === 1 && i === images.length - 1 && images.length > 1;
+                    return spansRow
+                        ? tile(image, i, 'aspect-[4/3] sm:aspect-[8/3]', '(max-width: 1024px) 100vw, 1024px', i < 2, 'sm:col-span-2')
+                        : tile(image, i, 'aspect-[4/3]', '(max-width: 640px) 100vw, 512px', i < 2);
+                })}
             </div>
 
             <dialog
