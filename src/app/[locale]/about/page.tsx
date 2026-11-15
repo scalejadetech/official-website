@@ -103,12 +103,16 @@ export default async function AboutPage({
     const values = [
         ...(t.raw('values') as Item[]),
         ...(t.raw('commitments') as Item[]),
-    ].filter((v) => !isDraft(v.text) && !(v.requires === 'papers' && papers.length === 0));
+    ]
+        .filter((v) => !isDraft(v.text) && !(v.requires === 'papers' && papers.length === 0))
+        .slice(0, 4); // Always four points, a 2×2 grid.
 
     const working = (t.raw('working') as Item[]).filter((w) => !isDraft(w.text));
     const founding = t('founding_text');
 
     // History: dated facts only. Add milestones here as they become public.
+    // Hidden for now; set to true to show the section again.
+    const SHOW_HISTORY = false;
     const history: { year: string; text: string; href?: string }[] = [
         ...(isDraft(founded) ? [] : [{ year: founded, text: t('history_founded') }]),
         ...papers.map((p) => ({
@@ -208,7 +212,7 @@ export default async function AboutPage({
             )}
 
             {/* 5. History — HRT's dated timeline. */}
-            {history.length > 0 && (
+            {SHOW_HISTORY && history.length > 0 && (
                 <section className="px-6 py-16 md:py-20 border-t border-slate-200" aria-labelledby="history-heading">
                     <div className="max-w-5xl mx-auto">
                         <SectionTitle id="history-heading">{t('history_title')}</SectionTitle>

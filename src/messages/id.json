@@ -114,21 +114,25 @@
     "values_title": "Yang kami pegang",
     "values": [
       {
-        "title": "Yang menyusun cakupan, dia yang membangun.",
-        "text": "Tanpa manajer akun, tanpa lapisan pengiriman, tanpa bangku cadangan. Insinyur di panggilan penentuan cakupan adalah insinyur yang menulis kodenya — dan yang menjawab ketika ada yang rusak."
+        "title": "Yang merancang, dia yang membangun.",
+        "text": "Tanpa account manager, tanpa perantara, tanpa tim cadangan. Insinyur yang hadir saat penyusunan cakupan adalah yang menulis kodenya, dan yang turun tangan ketika ada masalah."
       },
       {
-        "title": "Regulasi yang disebutkan, bukan \"siap patuh\".",
-        "text": "Kami merancang dan mendokumentasikan sesuai regulasi yang berlaku: POJK dan ketentuan pembayaran Bank Indonesia untuk keuangan, SPBE dan UU PDP untuk sektor publik, serta UU PDP, PDDIKTI, dan PDPA Singapura untuk pendidikan."
+        "title": "Regulasi yang jelas, bukan sekadar \"siap patuh\".",
+        "text": "Kami membangun dan mendokumentasikan sesuai aturan yang benar-benar berlaku: POJK dan ketentuan pembayaran Bank Indonesia untuk keuangan, SPBE dan UU PDP untuk sektor publik, serta UU PDP, PDDIKTI, dan PDPA Singapura untuk pendidikan."
       },
       {
-        "title": "Anda memiliki apa yang kami bangun.",
-        "text": "Anda memiliki kode, dokumentasi, konfigurasi infrastruktur, dan kekayaan intelektual. Setiap keterlibatan mencakup paket serah terima yang ditulis selama pembangunan — bukan dirangkai di akhir — sehingga tim Anda dapat mengoperasikan dan memperluas sistem tanpa kami."
+        "title": "Semua yang kami bangun, milik Anda.",
+        "text": "Kode, dokumentasi, konfigurasi infrastruktur, dan kekayaan intelektual sepenuhnya milik Anda. Paket serah terima kami susun selama pengerjaan, bukan di akhir, sehingga tim Anda dapat menjalankan dan mengembangkan sistem tanpa bergantung pada kami."
       },
       {
-        "title": "Kami mempublikasikan buktinya.",
-        "text": "Tolok ukur kami dipublikasikan, termasuk bagian yang tidak menguntungkan modelnya. Riset ditulis oleh insinyur yang sama yang membangun sistem klien.",
+        "title": "Kami membuka buktinya.",
+        "text": "Hasil benchmark kami terbuka untuk publik, termasuk hasil yang kurang menguntungkan model kami. Risetnya ditulis oleh insinyur yang juga membangun sistem klien.",
         "requires": "papers"
+      },
+      {
+        "title": "Satu tim untuk kode dan regulasi.",
+        "text": "Perusahaan yang mampu membangun sering tidak memahami regulasinya. Perusahaan yang memahami regulasi sering mensubkontrakkan pembangunannya. Kami mengerjakan keduanya, dalam satu tim."
       }
     ],
     "commitments": [

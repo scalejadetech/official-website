@@ -114,21 +114,25 @@
     "values_title": "What we hold to",
     "values": [
       {
-        "title": "The person who scopes it builds it.",
-        "text": "No account managers, no delivery layer, no bench. The engineer in the scoping call is the engineer who writes the code — and the one who answers when something breaks."
+        "title": "The engineer who scopes it builds it.",
+        "text": "No account managers, no hand-offs, no bench. The engineer on your scoping call writes the code, and answers when something breaks."
       },
       {
         "title": "Named regulations, not \"compliance-ready\".",
-        "text": "We design and document to the regulation that applies: POJK and Bank Indonesia payment rules for finance, SPBE and UU PDP for the public sector, UU PDP, PDDIKTI and Singapore's PDPA for education."
+        "text": "We build and document to the rules that actually apply: POJK and Bank Indonesia payment rules in finance, SPBE and UU PDP in the public sector, UU PDP, PDDIKTI and Singapore's PDPA in education."
       },
       {
-        "title": "You own what we build.",
-        "text": "You own the code, the documentation, the infrastructure configuration, and the IP. Every engagement includes a handover package written during the build — not assembled at the end — so your team can operate and extend the system without us."
+        "title": "You own everything we build.",
+        "text": "The code, documentation, infrastructure configuration and IP are yours. We write the handover package as we build, not at the end, so your team can run and extend the system without us."
       },
       {
-        "title": "We publish the evidence.",
-        "text": "Our benchmarks are published, including the parts that did not flatter the model. Research is written by the same engineers who build client systems.",
+        "title": "We publish our evidence.",
+        "text": "Our benchmarks are public, including the results that didn't flatter the model. The research is written by the same engineers who build client systems.",
         "requires": "papers"
+      },
+      {
+        "title": "One team for the code and the regulation.",
+        "text": "Firms that can build often don't know the regulation. Firms that know the regulation often subcontract the build. We do both, in one team."
       }
     ],
     "commitments": [
